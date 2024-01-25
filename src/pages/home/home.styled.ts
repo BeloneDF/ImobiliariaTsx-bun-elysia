@@ -5,7 +5,6 @@ const S = {
     display: flex;
     flex-direction: row;
     align-items: center;
-    height: 93vh;
   `,
   FilterContainer: styled.div`
     display: flex;
@@ -26,5 +25,4 @@ const S = {
     height: 100%;
   `,
 };
-
 export default S;
