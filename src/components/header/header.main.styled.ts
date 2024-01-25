@@ -31,7 +31,7 @@ const S = {
     width: 50%;
     justify-content: flex-end;
     gap: 2rem;
-    margin-right: 3rem;
+    margin-right: 2rem;
     height: 100%;
   `,
 };
