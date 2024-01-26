@@ -26,7 +26,6 @@ const S = {
 
   Image: styled.img`
     object-fit: cover;
-    height: 100%;
     filter: drop-shadow(5px 5px 5px #222);
     -webkit-filter: drop-shadow(5px 5px 5px #222);
   `,
