@@ -5,12 +5,12 @@ const HomeFilter = () => {
   return (
     <S.Container>
       <FilterButton
-        title={"algo"}
+        title={"Alugar"}
         style={{ borderRadius: "10px 0px 0px 0px" }}
       />
-      <FilterButton title={"algo2"} />
+      <FilterButton title={"Comprar"} />
       <FilterButton
-        title={"algo3"}
+        title={"Vender"}
         style={{ borderRadius: "0px 10px 0px 0px" }}
       />
     </S.Container>

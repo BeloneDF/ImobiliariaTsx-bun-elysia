@@ -1,11 +1,10 @@
+import { TextInput } from "../../input/text-input/text-input.styled";
 import * as S from "./home-card.styled";
 
 const HomeCard = () => {
   return (
     <S.Container>
-      <h1>
-        Home
-      </h1>
+      <TextInput placeholder="Nome" />
     </S.Container>
   );
 };
