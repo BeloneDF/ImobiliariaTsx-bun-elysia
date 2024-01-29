@@ -1,6 +1,6 @@
 import * as S from "./text-input.styled.ts";
-import { InputProps } from "../../../types/input/types.input.ts";
-import { InputSchema } from "../../../schemas/input-schema.ts";
+import { InputProps, SelectProps } from "../../../types/input/types.input.ts";
+import { InputSchema, SelectSchema } from "../../../schemas/input-schema.ts";
 
 export const TextInput: React.FC<InputProps> = ({
   placeholder,
@@ -12,6 +12,7 @@ export const TextInput: React.FC<InputProps> = ({
   id,
   className,
   required,
+  label,
 }) => {
   const result = InputSchema.safeParse({
     placeholder,
@@ -23,6 +24,7 @@ export const TextInput: React.FC<InputProps> = ({
     id,
     className,
     required,
+    label,
   });
 
   if (!result.success) {
@@ -30,16 +32,62 @@ export const TextInput: React.FC<InputProps> = ({
     return null;
   }
   return (
-    <S.TextInput
-      placeholder={placeholder}
-      value={value}
-      onChange={onChange}
-      style={style}
-      type={type}
-      name={name}
-      id={id}
-      className={className}
-      required={required}
-    />
+    <S.Container>
+      <label>{label}</label>
+      <S.TextInput
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+        style={style}
+        type={type}
+        name={name}
+        id={id}
+        className={className}
+        required={required}
+      />
+    </S.Container>
+  );
+};
+
+export const SelectInput: React.FC<SelectProps> = ({
+  value,
+  style,
+  name,
+  id,
+  className,
+  required,
+  children,
+  onChange,
+  label,
+}) => {
+  const result = SelectSchema.safeParse({
+    value,
+    style,
+    name,
+    id,
+    className,
+    required,
+    onChange,
+    label,
+  });
+  if (!result.success) {
+    console.error(result.error);
+    return null;
+  }
+  return (
+    <S.Container>
+      <label> {label}</label>
+      <S.SelectInput
+        value={value}
+        style={style}
+        name={name}
+        id={id}
+        className={className}
+        required={required}
+        onChange={onChange}
+      >
+        {children}
+      </S.SelectInput>
+    </S.Container>
   );
 };
