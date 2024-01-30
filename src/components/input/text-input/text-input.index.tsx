@@ -1,6 +1,6 @@
 import * as S from "./text-input.styled.ts";
 import { InputProps, SelectProps } from "../../../types/input/types.input.ts";
-import { InputSchema, SelectSchema } from "../../../schemas/input-schema.ts";
+import { InputSchema, SelectSchema } from "../../../schemas/input.schema.ts";
 
 export const TextInput: React.FC<InputProps> = ({
   placeholder,

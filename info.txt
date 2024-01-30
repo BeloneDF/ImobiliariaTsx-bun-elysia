@@ -1,2 +1,2 @@
-toLocaleString('pt-BR', {style: 'currency', currency:'brl'}) 
+.toLocaleString('pt-BR', {style: 'currency', currency:'brl'}) 
 para colocar preço para brl

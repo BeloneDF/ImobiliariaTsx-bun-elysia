@@ -2,8 +2,8 @@ import { ReactNode } from "react";
 
 export interface InputProps {
   placeholder?: string;
-  value: string;
-  onChange: React.ChangeEventHandler<HTMLInputElement>;
+  value: string | number;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   type: React.HTMLInputTypeAttribute;
   name?: string;
   id: string;

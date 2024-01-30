@@ -11,7 +11,6 @@ export const TextInput = styled.input`
   align-items: center;
   display: flex;
   justify-content: center;
-  text-transform: capitalize;
   color: #1b2d51;
   font-weight: 600;
   font-size: 1rem;

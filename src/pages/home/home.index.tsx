@@ -19,7 +19,7 @@ const Home = () => {
   return (
     <S.Contaier>
       <S.FilterContainer>
-        <HomeFilter />
+        <HomeFilter/>
         <HomeCard filterState={filterState} />
       </S.FilterContainer>
       <S.ImageContainer>

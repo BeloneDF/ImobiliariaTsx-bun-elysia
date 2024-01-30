@@ -1,5 +1,5 @@
 import RentBuy from "../../filter/rent-buy/rent-buy.index";
-import { TextInput } from "../../input/text-input/text-input.styled";
+import Sell from "../../filter/sell/sell.index";
 import * as S from "./home-card.styled";
 import { z } from "zod";
 
@@ -24,8 +24,8 @@ const HomeCard: React.FC<HomeCardProps> = ({ filterState }) => {
   function getInputsFilter(filteredState: string) {
     const filtered: FilteredType = {
       rent: <RentBuy />,
-      sell: <TextInput placeholder="Vender" />,
-      buy: <TextInput placeholder="Comprar" />,
+      sell: <Sell />,
+      buy: <RentBuy />,
     };
 
     return filtered[filteredState] || "";

@@ -1,11 +1,14 @@
 import styled from "styled-components";
-
-export const Button = styled.button`
+interface Props {
+  active?: boolean;
+}
+export const Button = styled.button<Props>`
   transition: all 0.2s ease-in-out;
   display: flex;
   width: 25%;
   height: 80%;
   background-color: #fff;
+  background: ${(props) => (props.active ? "#e5e5e5" : "#fff")};
   border: 1px solid #e5e5e5;
   align-items: center;
   display: flex;
