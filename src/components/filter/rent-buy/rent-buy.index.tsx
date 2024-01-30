@@ -9,8 +9,8 @@ import { LargeButton } from "../../buttons/large-button/large-button.styled";
 const RentBuy = () => {
   const [selectValue, setSelectValue] = useState<string>("");
   const [city, setCity] = useState<string>("");
-  const [minPrice, setMinPrice] = useState<string>("");
-  const [maxPrice, setMaxPrice] = useState<string>("");
+  const [minPrice, setMinPrice] = useState<number>(0);
+  const [maxPrice, setMaxPrice] = useState<number>(0);
 
   return (
     <S.Container>
@@ -38,7 +38,7 @@ const RentBuy = () => {
         <TextInput
           id="minPrice"
           onChange={(e) => setMinPrice(e.target.value)}
-          type="text"
+          type="number"
           value={minPrice}
           label="Preço Mínimo"
         />
@@ -46,8 +46,8 @@ const RentBuy = () => {
       <S.FilterContainer>
         <TextInput
           id="maxPrice"
-          onChange={(e) => setMaxPrice(e.target.value)}
-          type="text"
+          onChange={(e) => setMaxPrice(e.target.value.toString())}
+          type="number"
           value={maxPrice}
           label="Preço Máximo"
         />
