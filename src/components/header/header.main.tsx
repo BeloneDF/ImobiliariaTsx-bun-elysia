@@ -13,7 +13,7 @@ const Header = () => {
           <HeaderButton title={"Contato"} path={"/contact"} />
           <HeaderButton
             title={"Iniciar Tour"}
-            path={"/contact"}
+            path={"/properties"}
             isStarted={true}
           />
         </S.Nav>

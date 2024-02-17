@@ -2,6 +2,7 @@ import { createBrowserRouter, Navigate } from "react-router-dom";
 
 import { HomePage } from "../pages/home/home.index";
 import Header from "./../components/header/header.main";
+import { PropertiesPage } from "../pages/properties/properties.index";
 
 const router = createBrowserRouter([
   {
@@ -10,6 +11,15 @@ const router = createBrowserRouter([
       <>
         <Header />
         <HomePage />
+      </>
+    ),
+  },
+  {
+    path: "/properties",
+    element: (
+      <>
+        <Header />
+        <PropertiesPage />
       </>
     ),
   },
