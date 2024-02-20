@@ -73,10 +73,10 @@ export const InfoSectionTitle = styled.section`
   width: 100%;
   font-size: 1.2rem;
   font-weight: 500;
-  padding-left: 20px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 `;
 
 export const InfoSectionProperties = styled.section`
@@ -85,4 +85,11 @@ export const InfoSectionProperties = styled.section`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+`;
+
+export const TitleSection = styled.section`
+  width: 40%;
+  height: 100%;
+  align-items: center;
+  display: flex;
 `;

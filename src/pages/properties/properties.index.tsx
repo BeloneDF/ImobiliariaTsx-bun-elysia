@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 import * as S from "./properties.styled";
-import axios from "axios";
 import { Imovel } from "../../types/data/properties/properties.types";
 import CardPropertie from "../../components/cards/propertie-card/propertie-card.index";
+import api from "../../api/api.index";
 
 const Properties = () => {
   const [propertie, setPropertie] = useState<Imovel[]>([]);
 
-  async function getPropertirs() {
+  async function getProperties() {
     try {
-      const response = await axios.get("http://localhost:3001/imovel");
+      const response = await api.get("/imovel");
       setPropertie(response.data.data);
     } catch (error) {
       console.error(error);
@@ -17,13 +17,15 @@ const Properties = () => {
   }
 
   useEffect(() => {
-    getPropertirs();
+    getProperties();
   }, []);
   return (
     <S.Container>
       <S.MainCard>
         {propertie.map((properties) => {
-          return <CardPropertie key={properties.id} {...properties}></CardPropertie>;
+          return (
+            <CardPropertie key={properties.id} {...properties}></CardPropertie>
+          );
         })}
       </S.MainCard>
     </S.Container>

@@ -1,37 +1,15 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import * as S from "./carousel.styled";
+import { Imovel } from "../../types/data/properties/properties.types";
+//import { redirect } from "react-router-dom";
 
-// Definindo tipos
 interface CarouselProps {
   photos: string[];
+  data: Imovel;
+  style?: object;
 }
 
-// Estilos do componente
-const Container = styled.div`
-  width: 100%;
-  overflow: hidden;
-  position: relative; // Adicionado para posicionamento dos botões
-`;
-const Slide = styled.img`
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  transition: transform 0.5s ease;
-`;
-
-const Button = styled.button`
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #ffffff;
-  border: 1px solid #ccc;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-`;
-
-// Componente do Carrossel
-const Carousel: React.FC<CarouselProps> = ({ photos }) => {
+const Carousel: React.FC<CarouselProps> = ({ photos, data, style }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const nextSlide = () => {
@@ -46,25 +24,33 @@ const Carousel: React.FC<CarouselProps> = ({ photos }) => {
     );
   };
 
+  const handleToProperty = (id: string) => {
+    window.location.href = `/properties/${id}`;
+    //redirect(`/properties/${id}`);
+  };
+
   return (
-    <Container>
-      {photos.map((photo, index) => (
-        <Slide
-          key={index}
-          src={photo}
-          style={{
-            transform: `translateX(-${currentSlide * 100}%)`,
-            opacity: index === currentSlide ? 1 : 0,
-          }}
-        />
-      ))}
-      <Button onClick={prevSlide} style={{ left: 10 }}>
-        Anterior
-      </Button>
-      <Button onClick={nextSlide} style={{ right: 10 }}>
-        Próximo
-      </Button>
-    </Container>
+    <S.Container style={style}>
+      <S.Slide
+        src={photos[currentSlide]}
+        onClick={() => handleToProperty(data.id)}
+        style={{ cursor: "pointer" }}
+      />
+      <S.Button onClick={prevSlide} style={{ left: 10 }}>
+        {"<"}
+      </S.Button>
+      <S.Button onClick={nextSlide} style={{ right: 10 }}>
+        {">"}
+      </S.Button>
+      <S.IndicatorsContainer>
+        {photos.map((_, index) => (
+          <S.Indicator
+            key={index}
+            className={index === currentSlide ? "active" : ""}
+          />
+        ))}
+      </S.IndicatorsContainer>
+    </S.Container>
   );
 };
 

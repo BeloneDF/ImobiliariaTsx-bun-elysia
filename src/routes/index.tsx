@@ -3,6 +3,7 @@ import { createBrowserRouter, Navigate } from "react-router-dom";
 import { HomePage } from "../pages/home/home.index";
 import Header from "./../components/header/header.main";
 import { PropertiesPage } from "../pages/properties/properties.index";
+import { PropertiesInfoPage } from "../pages/properties-info/properties-info.index";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,15 @@ const router = createBrowserRouter([
       <>
         <Header />
         <PropertiesPage />
+      </>
+    ),
+  },
+  {
+    path: `/properties/:id`,
+    element: (
+      <>
+        <Header />
+        <PropertiesInfoPage />
       </>
     ),
   },
