@@ -12,7 +12,6 @@ export const FilterContainer = styled.div`
   width: 100%;
   height: 33%;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   

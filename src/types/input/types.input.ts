@@ -13,6 +13,18 @@ export interface InputProps {
   label?: string;
 }
 
+export interface TextAreaProps {
+  placeholder?: string;
+  value?: string | number;
+  onChange?: React.ChangeEventHandler<HTMLTextAreaElement> | undefined;
+  name?: string;
+  id?: string;
+  className?: string;
+  style?: React.CSSProperties;
+  required?: boolean;
+  label?: string;
+}
+
 export interface SelectProps {
   value: string;
   name?: string;

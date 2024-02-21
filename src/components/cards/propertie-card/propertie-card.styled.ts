@@ -20,8 +20,6 @@ export const ImageSection = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  /* Ajuste para evitar interferência no layout do carrossel */
   overflow: hidden;
 `;
 
@@ -93,3 +91,5 @@ export const TitleSection = styled.section`
   align-items: center;
   display: flex;
 `;
+
+

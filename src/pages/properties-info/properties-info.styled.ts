@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Section = styled.section`
   width: 50%;
-  height: 70%;
+  height: 100%;
   padding: 20px;
   //border: 1px solid red;
   display: flex;
@@ -41,4 +41,20 @@ export const CardInfo = styled.div`
   flex-direction: column;
   gap: 30px;
   bottom: 10px;
+`;
+export const InfoPropertie = styled.section`
+  width: 100%;
+  height: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
+export const ContactPropertie = styled.div`
+  height: 40%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  top: 3%;
 `;

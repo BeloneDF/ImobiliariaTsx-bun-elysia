@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 export const TextInput = styled.input`
   transition: all 0.2s ease-in-out;
   display: flex;
@@ -48,6 +49,24 @@ export const SelectInput = styled.select`
 `;
 
 export const Container = styled.div`
+  width: 30%;
+  display: flex;
+  /* justify-content: center; */
+  padding: 10px;
+  flex-direction: column;
+  gap: 10px;
+
+  label {
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    white-space: nowrap; /* Impede que o texto seja quebrado em várias linhas */
+    overflow: hidden; /* Esconde o conteúdo além da largura especificada */
+    text-overflow: ellipsis;
+  }
+`;
+
+export const ContainerTextArea = styled.div`
   width: 30%;
   display: flex;
   /* justify-content: center; */

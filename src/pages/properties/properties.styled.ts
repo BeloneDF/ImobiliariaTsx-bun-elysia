@@ -20,4 +20,5 @@ export const MainCard = styled.section`
   overflow-y: scroll;
   padding: 10px;
   flex-wrap: wrap;
+  margin: 0 auto;
 `;
