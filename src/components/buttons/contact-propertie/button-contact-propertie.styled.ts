@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
 export const Button = styled.button`
-  transition: all 0.5s ease;
+  border: none;
+  transition: all 0.2s ease;
   color: white;
   text-transform: uppercase;
   text-align: center;
   line-height: 1;
-  font-size: 0.8rem;
+  font-size: 1rem;
   background-color: #1b2d51;
   padding: 10px;
   outline: none;
@@ -25,11 +26,12 @@ export const Button = styled.button`
     color: #1b2d51;
     cursor: pointer;
     background-color: white;
+    border: 2px solid #1b2d51;
   }
 `;
 
 export const WhatsappButton = styled.button`
-  transition: all 0.5s ease;
+  transition: all 0.2s ease;
   color: white;
   text-transform: uppercase;
   text-align: center;

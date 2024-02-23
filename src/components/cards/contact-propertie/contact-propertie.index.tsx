@@ -68,7 +68,7 @@ const ContactCard = (id: IDProps) => {
               display: "block",
               height: "100%",
               width: "100%",
-              paddingLeft: "3%",
+              paddingLeft: "2%",
             }}
           >
             <label
@@ -97,6 +97,7 @@ const ContactCard = (id: IDProps) => {
                 fontSize: "1rem",
                 paddingLeft: 5,
               }}
+              onChange={(e) => setUser({ ...user, message: e.target.value })}
             ></textarea>
           </div>
         </S.InfoDiv>
@@ -109,7 +110,6 @@ const ContactCard = (id: IDProps) => {
             justifyContent: "center",
             gap: 10,
             paddingLeft: 10,
-            border: "1px solid red",
             height: "100%",
           }}
         >

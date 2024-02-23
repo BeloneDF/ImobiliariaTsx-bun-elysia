@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import * as S from "./carousel.styled";
-import { Imovel } from "../../types/data/properties/properties.types";
+import { Imovel, Fotos } from "../../types/data/properties/properties.types";
 //import { redirect } from "react-router-dom";
 
 interface CarouselProps {
-  photos: string[];
+  photos: Fotos[];
   data: Imovel;
   style?: object;
 }
@@ -32,7 +32,7 @@ const Carousel: React.FC<CarouselProps> = ({ photos, data, style }) => {
   return (
     <S.Container style={style}>
       <S.Slide
-        src={photos[currentSlide]}
+        src={`data:image/jpeg;base64,${photos[currentSlide]}`}
         onClick={() => handleToProperty(data.id)}
         style={{ cursor: "pointer" }}
       />

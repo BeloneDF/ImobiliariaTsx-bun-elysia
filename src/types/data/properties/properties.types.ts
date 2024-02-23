@@ -15,6 +15,11 @@ export interface Imovel {
   id: string;
   suite: number;
   cidade: string;
+  fotos: Fotos[];
+}
+
+export interface Fotos {
+  foto: string;
 }
 
 export const ImovelSchema = z.object({

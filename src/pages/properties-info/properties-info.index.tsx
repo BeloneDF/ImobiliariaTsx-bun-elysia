@@ -4,7 +4,7 @@ import api from "../../api/api.index";
 import { useEffect, useState } from "react";
 import * as S from "./properties-info.styled";
 import Carousel from "../../components/carousel/crousel.index";
-import { Imovel } from "../../types/data/properties/properties.types";
+import { Imovel, Fotos } from "../../types/data/properties/properties.types";
 import {
   ShowerIcon,
   AreaIcon,
@@ -19,18 +19,16 @@ import ContactCard from "../../components/cards/contact-propertie/contact-proper
 const PropertiesInfo = () => {
   const { id } = useParams<{ id: string }>();
   const [data, setData] = useState<Imovel>();
-
-  const fakePhotos = [
-    "https://via.placeholder.com/600/92c952",
-    "https://via.placeholder.com/600/771796",
-    "https://via.placeholder.com/600/24f355",
-    "https://via.placeholder.com/600/d32776",
-    "https://via.placeholder.com/600/f66b97",
-  ];
+  const [photos, setPhotos] = useState<Fotos[]>([]);
 
   async function getPropertyById(id: string | undefined) {
     try {
       const response = await api.get(`/imovel/${id}`);
+      setPhotos(
+        response.data.data.fotos.map((index: Fotos) => {
+          return index.foto;
+        })
+      );
       setData(response.data.data);
     } catch (error) {
       console.error(error);
@@ -43,18 +41,19 @@ const PropertiesInfo = () => {
 
   return (
     <Container>
+      <MainCard
+        style={{
+          flexDirection: "column",
+          display: "flex",
+          flexWrap: "nowrap",
+          gap: 40,
+        }}
+      >
       {data && (
-        <MainCard
-          style={{
-            flexDirection: "column",
-            display: "flex",
-            flexWrap: "nowrap",
-            gap: 40,
-          }}
-        >
+        <>
           <S.InfoPropertie>
             <S.Section>
-              <Carousel photos={fakePhotos} data={data} />
+              <Carousel photos={photos} data={data} />
             </S.Section>
             <S.Section>
               <S.CardTitle>
@@ -153,8 +152,9 @@ const PropertiesInfo = () => {
           <S.ContactPropertie>
             <ContactCard id={data.id}></ContactCard>
           </S.ContactPropertie>
-        </MainCard>
+          </>
       )}
+        </MainCard>
     </Container>
   );
 };
