@@ -32,6 +32,7 @@ const Carousel: React.FC<CarouselProps> = ({ photos, data, style }) => {
   return (
     <S.Container style={style}>
       <S.Slide
+        loading="lazy"
         src={`data:image/jpeg;base64,${photos[currentSlide]}`}
         onClick={() => handleToProperty(data.id)}
         style={{ cursor: "pointer" }}

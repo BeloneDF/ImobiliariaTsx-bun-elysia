@@ -12,7 +12,7 @@ export const Container = styled.div`
 export const MainCard = styled.section`
   display: flex;
   justify-content: space-between;
-  width: 90%;
+  width: 85%;
   height: 90%;
   background-color: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
@@ -21,4 +21,23 @@ export const MainCard = styled.section`
   padding: 10px;
   flex-wrap: wrap;
   margin: 0 auto;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #888;
+  }
 `;

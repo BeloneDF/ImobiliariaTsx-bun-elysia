@@ -1,20 +1,16 @@
-import { useEffect } from "react";
 import FilterButton from "../../buttons/filter/button-filter";
 import * as S from "./home-filter.styled";
 import { useSearchParams } from "react-router-dom";
 
-
-const HomeFilter= ( ) => {
-  const [searchParams, setSearchParams] = useSearchParams();
+const HomeFilter = () => {
+  const [searchParams, setSearchParams] = useSearchParams(
+    new URLSearchParams(window.location.href)
+  );
 
   const handleFilter = (filter: string) => {
+    searchParams.get("filter");
     setSearchParams({ filter: filter });
   };
-  useEffect(() => {
-    if (!searchParams.get("filter")) {
-      setSearchParams({ filter: "rent" });
-    }
-  }, []);
 
   return (
     <S.Container>

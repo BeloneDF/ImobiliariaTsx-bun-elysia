@@ -1,6 +1,7 @@
+import { UserButtonProps } from "../../../types/button/contactButtonProperties";
+
 export interface ButtonProps {
-  message: string;
-  user: object;
+  user: UserButtonProps;
 }
 
 export interface WhatsAppButtonProps {

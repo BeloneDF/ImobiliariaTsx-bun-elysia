@@ -15,6 +15,7 @@ const ContactCard = (id: IDProps) => {
     email: "",
     phone: "",
     message: "",
+    url: window.location.href,
   });
 
   return (
@@ -29,6 +30,7 @@ const ContactCard = (id: IDProps) => {
           placeholder="Nome"
         />
         <TextInput
+          required
           id="phone"
           value={user.phone}
           onChange={(e) => setUser({ ...user, phone: e.target.value })}
@@ -37,6 +39,7 @@ const ContactCard = (id: IDProps) => {
           placeholder="Telefone/Celular"
         />
         <TextInput
+          required
           id="email"
           value={user.email}
           onChange={(e) => setUser({ ...user, email: e.target.value })}
@@ -86,6 +89,7 @@ const ContactCard = (id: IDProps) => {
               Sua Dúvida
             </label>
             <textarea
+              required
               id="message"
               style={{
                 width: "100%",
@@ -113,10 +117,7 @@ const ContactCard = (id: IDProps) => {
             height: "100%",
           }}
         >
-          <ButtonContactPropertie
-            user={user}
-            message={user.message}
-          ></ButtonContactPropertie>
+          <ButtonContactPropertie user={user}></ButtonContactPropertie>
           <WhatsAppButton id={id.id}></WhatsAppButton>
         </S.InfoDiv>
       </div>

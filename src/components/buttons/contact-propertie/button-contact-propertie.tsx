@@ -2,25 +2,21 @@ import React from "react";
 import { Button, WhatsappButton } from "./button-contact-propertie.styled";
 import * as T from "./types";
 import api from "../../../api/api.index";
+import { UserButtonProps } from "./../../../types/button/contactButtonProperties";
 
-export const ButtonContactPropertie: React.FC<T.ButtonProps> = ({
-  message,
-  user,
-}) => {
-  async function sendEmail(user: object, message: string) {
+export const ButtonContactPropertie: React.FC<T.ButtonProps> = ({ user }) => {
+  async function sendEmail(user: UserButtonProps) {
     try {
+      console.log(user)
       api.post("/sendEmail", {
-        user: user,
-        message: message,
+        user: user
       });
       alert("Email enviado com sucesso!");
     } catch (error) {
       console.error(error);
     }
   }
-  return (
-    <Button onClick={() => sendEmail(user, message)}>Enviar Dúvidas</Button>
-  );
+  return <Button onClick={() => sendEmail(user)}>Enviar Dúvidas</Button>;
 };
 
 export const WhatsAppButton: React.FC<T.WhatsAppButtonProps> = ({ id }) => {

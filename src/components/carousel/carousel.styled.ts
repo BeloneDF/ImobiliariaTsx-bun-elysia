@@ -12,6 +12,7 @@ export const Slide = styled.img`
   width: 100%;
   height: 100%;
   object-fit: fill;
+  aspect-ratio: 16/9
 `;
 
 export const Button = styled.button`

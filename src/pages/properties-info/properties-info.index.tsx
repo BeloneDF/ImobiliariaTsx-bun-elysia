@@ -49,112 +49,112 @@ const PropertiesInfo = () => {
           gap: 40,
         }}
       >
-      {data && (
-        <>
-          <S.InfoPropertie>
-            <S.Section>
-              <Carousel photos={photos} data={data} />
-            </S.Section>
-            <S.Section>
-              <S.CardTitle>
-                <h2>{data.title}</h2>
-                <h4 style={{ color: "#1D5F77" }}>
-                  {data.price.toLocaleString("pt-BR", {
-                    style: "currency",
-                    currency: "BRL",
-                  })}
-                </h4>
-              </S.CardTitle>
-              <S.InfoContainer>
-                <S.CardInfo style={{ width: "30%" }}>
-                  <IconSection
-                    style={{
-                      justifyContent: "flex-start",
-                      width: "100%",
-                      alignItems: "center",
-                      gap: 10,
-                      paddingLeft: "4%",
-                      marginTop: 10,
-                    }}
-                  >
-                    <CardIcon>
-                      <ShowerIcon></ShowerIcon>
-                    </CardIcon>
-                    {data.bathroom}
-                  </IconSection>
-                  <IconSection
-                    style={{
-                      justifyContent: "flex-start",
-                      width: "100%",
-                      alignItems: "center",
-                      gap: 10,
-                      paddingLeft: "4%",
-                    }}
-                  >
-                    <CardIcon>
-                      <BedRoomIcon></BedRoomIcon>
-                    </CardIcon>
-                    {data.badroom}
-                  </IconSection>
-                  <IconSection
-                    style={{
-                      justifyContent: "flex-start",
-                      width: "100%",
-                      alignItems: "center",
-                      gap: 10,
-                      paddingLeft: "4%",
-                    }}
-                  >
-                    <CardIcon>
-                      <AreaIcon></AreaIcon>
-                    </CardIcon>
-                    {data.area}m²
-                  </IconSection>
-                  <IconSection
-                    style={{
-                      justifyContent: "flex-start",
-                      width: "100%",
-                      alignItems: "center",
-                      gap: 10,
-                      paddingLeft: "4%",
-                    }}
-                  >
-                    <CardIcon>
-                      <Suits></Suits>
-                    </CardIcon>
-                    {data.suite}
-                  </IconSection>
-                  <IconSection
-                    style={{
-                      justifyContent: "flex-start",
-                      width: "100%",
-                      alignItems: "center",
-                      gap: 10,
-                      paddingLeft: "4%",
-                    }}
-                  >
-                    <CardIcon>
-                      <LocationOn style={{ width: 20, color: "white" }} />
-                    </CardIcon>
-                    {data.cidade}
-                  </IconSection>
-                </S.CardInfo>
-                <S.CardInfo style={{ width: "68%" }}>
-                  <div
-                    style={{ display: "inline-block", textAlign: "justify" }}
-                  >
-                    {data.description}
-                  </div>
-                </S.CardInfo>
-              </S.InfoContainer>
-            </S.Section>
-          </S.InfoPropertie>
-          <S.ContactPropertie>
-            <ContactCard id={data.id}></ContactCard>
-          </S.ContactPropertie>
+        {data && (
+          <>
+            <S.InfoPropertie>
+              <S.Section>
+                <Carousel photos={photos} data={data} />
+              </S.Section>
+              <S.Section>
+                <S.CardTitle>
+                  <h2>{data.title}</h2>
+                  <h4 style={{ color: "#1D5F77" }}>
+                    {data.price.toLocaleString("pt-BR", {
+                      style: "currency",
+                      currency: "BRL",
+                    })}
+                  </h4>
+                </S.CardTitle>
+                <S.InfoContainer>
+                  <S.CardInfo style={{ width: "30%" }}>
+                    <IconSection
+                      style={{
+                        justifyContent: "flex-start",
+                        width: "100%",
+                        alignItems: "center",
+                        gap: 10,
+                        paddingLeft: "4%",
+                        marginTop: 10,
+                      }}
+                    >
+                      <CardIcon>
+                        <ShowerIcon></ShowerIcon>
+                      </CardIcon>
+                      {data.bathroom}
+                    </IconSection>
+                    <IconSection
+                      style={{
+                        justifyContent: "flex-start",
+                        width: "100%",
+                        alignItems: "center",
+                        gap: 10,
+                        paddingLeft: "4%",
+                      }}
+                    >
+                      <CardIcon>
+                        <BedRoomIcon></BedRoomIcon>
+                      </CardIcon>
+                      {data.badroom}
+                    </IconSection>
+                    <IconSection
+                      style={{
+                        justifyContent: "flex-start",
+                        width: "100%",
+                        alignItems: "center",
+                        gap: 10,
+                        paddingLeft: "4%",
+                      }}
+                    >
+                      <CardIcon>
+                        <AreaIcon></AreaIcon>
+                      </CardIcon>
+                      {data.area}m²
+                    </IconSection>
+                    <IconSection
+                      style={{
+                        justifyContent: "flex-start",
+                        width: "100%",
+                        alignItems: "center",
+                        gap: 10,
+                        paddingLeft: "4%",
+                      }}
+                    >
+                      <CardIcon>
+                        <Suits></Suits>
+                      </CardIcon>
+                      {data.suite}
+                    </IconSection>
+                    <IconSection
+                      style={{
+                        justifyContent: "flex-start",
+                        width: "100%",
+                        alignItems: "center",
+                        gap: 10,
+                        paddingLeft: "4%",
+                      }}
+                    >
+                      <CardIcon>
+                        <LocationOn style={{ width: 20, color: "white" }} />
+                      </CardIcon>
+                      {data.cidade}
+                    </IconSection>
+                  </S.CardInfo>
+                  <S.CardInfo style={{ width: "68%" }}>
+                    <div
+                      style={{ display: "inline-block", textAlign: "justify" }}
+                    >
+                      {data.description}
+                    </div>
+                  </S.CardInfo>
+                </S.InfoContainer>
+              </S.Section>
+            </S.InfoPropertie>
+            <S.ContactPropertie>
+              <ContactCard id={data.id}></ContactCard>
+            </S.ContactPropertie>
           </>
-      )}
-        </MainCard>
+        )}
+      </MainCard>
     </Container>
   );
 };

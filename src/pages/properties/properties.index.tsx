@@ -9,11 +9,8 @@ const Properties = () => {
 
   async function getProperties() {
     try {
-      console.log(1);
       const response = await api.get("/imovel");
-      console.log(2);
       setPropertie(response.data.data);
-      console.log(3);
     } catch (error) {
       console.error(error);
     }

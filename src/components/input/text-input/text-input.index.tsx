@@ -44,6 +44,7 @@ export const TextInput: React.FC<InputProps> = ({
         id={id}
         className={className}
         required={required}
+        autoComplete="true"
       />
     </S.Container>
   );
