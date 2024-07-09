@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "backendimobiliaria-production.up.railway.app",
+  baseURL: "https://backendimobiliaria-production.up.railway.app/",
 });
 
 export default api;
